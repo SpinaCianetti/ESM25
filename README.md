@@ -235,9 +235,7 @@ Each notebook contains a **configuration cell** near the top where input/output 
 
 If you use ESM25 in your research, please cite the ESM-DB source database:
 
-> Lanzano, G., Luzi, L., D'Amico, V., et al. (2019). *The pan-European Engineering Strong Motion (ESM) flatfile.* Bulletin of Earthquake Engineering, 17, 3177–3204. https://doi.org/10.1007/s10518-019-00640-x
-
-> Luzi, L., Hailemikael, S., Bindi, D., et al. (2016). *ISING (Italian Seismological Instrumental and Parametric Database): A reference database for Italian strong-motion recordings.* Seismological Research Letters, 87(4), 987–997.
+> >Cianetti S., Mascandola C., Faenza L., Felicetta C., Russo E., Jozinović D., Münchmeyer J., Luzi L., Michelini A. (2026).  ESM25: A Machine-Learning-Ready Snapshot of the European Engineering Strong-Motion Database. Istituto Nazionale di Geofisica e Vulcanologia (INGV). https://doi.org/10.xxxxx/esm25
 
 ---
 
