@@ -17,15 +17,16 @@ This repository contains the Jupyter notebooks used to build **ESM25**, a machin
 
 ```
 .
-├── 01-workflow_download_esm.ipynb
-├── 02-combine_events_csv.ipynb
-├── 03-create_metadata_rename.ipynb
-├── 04-extract_waveform_parameters.ipynb
-├── 05-check_download_analysis.ipynb
-├── 06-create_esm25_padding.ipynb
-├── 07-write_h5_seisbench.ipynb
-├── 08-ESM25_magnitude_analysis.ipynb
-├── 09-dataset_overview_figures.ipynb
+├── notebooks 
+    ├── 01-workflow_download_esm.ipynb
+    ├── 02-combine_events_csv.ipynb
+    ├── 03-create_metadata_rename.ipynb
+    ├── 04-extract_waveform_parameters.ipynb
+    ├── 05-check_download_analysis.ipynb
+    ├── 06-create_esm25_padding.ipynb
+    ├── 07-write_h5_seisbench.ipynb
+    ├── 08-ESM25_magnitude_analysis.ipynb
+    ├── 09-dataset_overview_figures.ipynb
 └── README.md
 ```
 
