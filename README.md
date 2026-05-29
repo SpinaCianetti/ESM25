@@ -227,7 +227,7 @@ Each notebook contains a **configuration cell** near the top where input/output 
 
 - **ASDF source files:** `{event_id}.h5`, `{event_id}_SA.csv`, `{event_id}_SD.csv`
 - **Metadata columns** follow a domain-prefix convention: `source_*`, `station_*`, `path_*`, `trace_*`
-- **ESM25 trace names distrubuted through ESM website:** `{source_id}.{network}.{station}.{location}.{channel}`
+- **ESM25 trace names distrubuted through ESM website:** `{source_esm_id}.{station_network_code}.{station_code}.{station_location_code}.{station_channel_code}`
 - **SeisBench trace names:** `bucket{N}${i}`, where `N` is the 1-based bucket number and `i` is the 0-based index of the trace within that bucket
 
 ---
