@@ -236,7 +236,7 @@ Each notebook contains a **configuration cell** near the top where input/output 
 
 If you use ESM25 in your research, please cite the ESM-DB source database:
 
-> >Cianetti S., Mascandola C., Faenza L., Felicetta C., Russo E., Jozinović D., Münchmeyer J., Luzi L., Michelini A. (2026).  ESM25: A Machine-Learning-Ready Snapshot of the European Engineering Strong-Motion Database. Istituto Nazionale di Geofisica e Vulcanologia (INGV). https://doi.org/10.xxxxx/esm25
+> >Cianetti S., Mascandola C., Faenza L., Felicetta C., Russo E., Jozinović D., Münchmeyer J., Luzi L., Michelini A. (2026).  ESM25: A Machine-Learning-Ready Snapshot of the European Engineering Strong-Motion Database. Istituto Nazionale di Geofisica e Vulcanologia (INGV). https://doi.org/10.13127/ai/esm25
 
 ---
 
