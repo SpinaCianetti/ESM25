@@ -138,7 +138,11 @@ Performs a comprehensive quality control on the downloaded dataset and explorato
 
 ### `06` — HDF5 Dataset Construction
 
-Core dataset builder. Creates consolidated HDF5 files from the per-event ASDF files for three record categories (`good_cv`, `good_mp`, `bad`) and extracts response spectra from `AuxiliaryData/Spectra`. Applies resampling to 200 Hz, zero-padding to fixed lengths, and temporal metadata enrichment via join with `waveform_summary.csv`. A front-padding alignment step (section 4.3) synchronises the three CV components (u, v, w) and the corresponding MP waveform to a unified start time by prepending zeros, preserving original per-component timestamps under `_orig_` column names. A final alignment step computes the intersection cv ∩ mp ∩ spectra and writes the definitive `metadata_final.csv`.
+Core dataset builder. Creates consolidated HDF5 files from the per-event ASDF files for three record categories and extracts response spectra from `AuxiliaryData/Spectra`. Applies resampling to 200 Hz (CV only; MP data are already at 200 Hz), zero-padding to fixed lengths, and temporal metadata enrichment via join with `waveform_summary.csv`.
+
+The pipeline runs automatically in the order **bad → good_mp → good_cv**. Too-long traces (> 420 s) are handled differently per dataset: `bad` traces are trimmed; `good_mp` traces are discarded (this is where length-based selection happens); `good_cv` traces are trimmed but restricted to rows that survived `good_mp`, keeping the two good-quality HDF5 files aligned.
+
+A front-padding alignment step (section 4.3) synchronises the three CV components (u, v, w) and the corresponding MP waveform to a unified start time by prepending zeros, preserving original per-component timestamps under `_orig_` column names. A final alignment step computes the intersection cv ∩ mp ∩ spectra and writes the definitive `metadata_final.csv`.
 
 | Dataset | CSV file | HDF5 file | Shape | Duration |
 |---|---|---|---|---|
@@ -206,6 +210,10 @@ Install with:
 ```bash
 pip install obspy pyasdf h5py scipy numpy pandas matplotlib tqdm seisbench seaborn cartopy
 ```
+or
+```bash
+mamba install obspy pyasdf h5py scipy numpy pandas matplotlib tqdm seisbench seaborn cartopy
+```
 
 ---
 
@@ -236,7 +244,7 @@ Each notebook contains a **configuration cell** near the top where input/output 
 
 If you use ESM25 in your research, please cite the ESM-DB source database:
 
-> >Cianetti S., Mascandola C., Faenza L., Felicetta C., Russo E., Jozinović D., Münchmeyer J., Luzi L., Michelini A. (2026).  ESM25: A Machine-Learning-Ready Snapshot of the European Engineering Strong-Motion Database. Istituto Nazionale di Geofisica e Vulcanologia (INGV). https://doi.org/10.13127/ai/esm25
+>Cianetti S., Mascandola C., Faenza L., Felicetta C., Russo E., Jozinović D., Münchmeyer J., Luzi L., Michelini A. (2026).  ESM25: A Machine-Learning-Ready Snapshot of the European Engineering Strong-Motion Database. Istituto Nazionale di Geofisica e Vulcanologia (INGV). https://doi.org/10.13127/ai/esm25
 
 ---
 
